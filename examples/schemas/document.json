@@ -1,0 +1,68 @@
+{
+  "name": "document",
+  "fields": [
+    {
+      "name": "id",
+      "type": "bigserial",
+      "options": [
+        "primary key"
+      ]
+    },
+    {
+      "name": "document_mpid",
+      "type": "bigint",
+      "options": [
+        "not null"
+      ]
+    },
+    {
+      "name": "merchant_id",
+      "type": "bigint"
+    },
+    {
+      "name": "transaction_id",
+      "type": "bigint"
+  },
+    {
+      "name": "marketplace_id",
+      "type": "smallint",
+      "options": [
+        "not null"
+      ]
+    },
+    {
+      "name": "number",
+      "type": "varchar",
+      "limit": 200,
+      "options": [
+        "not null"
+      ]
+    },
+    {
+      "name": "type",
+      "type": "varchar",
+      "limit": 50,
+      "options": [
+        "not null"
+      ]
+    },
+    {
+      "name": "created_at",
+      "type": "timestamp",
+      "options": [
+        "not null"
+      ]
+    },
+    {
+      "name": "updated_at",
+      "type": "timestamp",
+      "options": [
+        "not null"
+      ]
+    },
+    {
+      "name": "deleted_at",
+      "type": "timestamp"
+    }
+  ]
+}

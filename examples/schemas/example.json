@@ -1,0 +1,31 @@
+{
+  "name": "example",
+  "fields": [
+    {
+      "name": "id",
+      "type": "bigserial",
+      "options": [
+        "primary key"
+      ]
+    },
+    {
+      "name": "name",
+      "type": "varchar",
+      "limit": 50,
+      "options": [
+        "not null"
+      ]
+    }
+  ],
+  "indexes": [
+    {
+      "name": "index_example_on_name",
+      "fields": [
+        {
+          "column": "name"
+        }
+      ],
+      "unique": true
+    }
+  ]
+}

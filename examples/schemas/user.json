@@ -1,0 +1,80 @@
+{
+  "name": "user",
+  "fields": [
+    {
+      "name": "id",
+      "type": "bigserial",
+      "options": [
+        "primary key"
+      ]
+    },
+    {
+      "name": "email",
+      "type": "varchar",
+      "limit": 200,
+      "options": [
+        "not null"
+      ]
+    },
+    {
+      "name": "name",
+      "type": "varchar",
+      "limit": 200,
+      "options": [
+        "not null"
+      ]
+    },
+    {
+      "name": "created_at",
+      "type": "timestamp",
+      "options": [
+        "nullable"
+      ]
+    },
+    {
+      "name": "updated_at",
+      "type": "timestamp"
+    },
+    {
+      "name": "deleted_at",
+      "type": "timestamp"
+    },
+    {
+      "name": "location",
+      "type": "varchar",
+      "limit": 200,
+      "options": [
+        "not null"
+      ]
+    }
+  ],
+  "indexes": [
+    {
+      "name": "index_user_on_email",
+      "fields": [
+        {
+          "column": "email"
+        }
+      ],
+      "unique": true,
+      "order": "ASC"
+    },
+    {
+      "name": "index_user_on_name_and_email",
+      "fields": [
+        {
+          "column": "name",
+          "order": "ASC"
+        },
+        {
+          "column": "email",
+          "order": "ASC"
+        },
+        {
+          "column": "location",
+          "order": "ASC"
+        }
+      ]
+    }
+  ]
+}

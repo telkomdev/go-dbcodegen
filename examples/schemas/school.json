@@ -1,0 +1,94 @@
+{
+  "name": "school",
+  "fields": [
+    {
+      "name": "id",
+      "type": "bigserial",
+      "options": [
+        "primary key"
+      ]
+    },
+    {
+      "name": "marketplace_id",
+      "type": "smallint",
+      "options": [
+        "not null"
+      ]
+    },
+    {
+      "name": "is_suspended",
+      "type": "bool",
+      "options": [
+        "not null"
+      ]
+    },
+    {
+      "name": "ip_address",
+      "type": "varchar",
+      "limit": 45,
+      "options": [
+        "NOT NULL"
+      ]
+    },
+    {
+      "name": "user_agent",
+      "type": "varchar",
+      "limit": 255,
+      "options": [
+        "not null"
+      ]
+    },
+    {
+      "name": "device_platform",
+      "type": "varchar",
+      "limit": 255,
+      "options": [
+        "not null"
+      ]
+    },
+    {
+      "name": "device_model",
+      "type": "varchar",
+      "limit": 255,
+      "options": [
+        "not null"
+      ]
+    },
+    {
+      "name": "device_browser",
+      "type": "varchar",
+      "limit": 255,
+      "options": [
+        "not null"
+      ]
+    },
+    {
+      "name": "created_at",
+      "type": "timestamp",
+      "options": [
+        "not null"
+      ]
+    },
+    {
+      "name": "updated_at",
+      "type": "timestamp",
+      "options": [
+        "not null"
+      ]
+    },
+    {
+      "name": "deleted_at",
+      "type": "timestamp"
+    }
+  ],
+  "indexes": [
+    {
+      "name": "index_school_on_marketplace_id",
+      "fields": [
+        {
+          "column": "marketplace_id"
+        }
+      ]
+    }
+  ]
+}
