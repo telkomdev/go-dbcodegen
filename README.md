@@ -1,5 +1,12 @@
 # Go Database Code Generator
-This tool is to help you generate schema migrations and CRUD code in Golang
+This tool is to help you generate schema migrations and CRUD code in Golang from an entity definition in form of JSON.
+
+## Why
+This tool is inspired by and amazing video titled [Design Microservice Architectures the Right Way](https://www.youtube.com/watch?v=j6ow-UemzBc).
+Plenty of reason why building this tool can be found there. One of the example is, according to that video, when things 
+are slow because some queries don't have index, the hero is not the person who fix it by adding index, but the unsung 
+hero is those who prevent it from ever happened before. And one way to do that is to provide a tool to generate high
+quality database access code. This dbcodegen aims to be such a tool.
 
 ## Supported Command
 ## gen:migration
@@ -45,3 +52,41 @@ Example:
 ```
 dump:db -c postgresql://postgres:postgres@localhost:5432/playground -o examples/schemas
 ```
+
+## Input file Example
+The input is JSON file containing structures of an entity. Complete schema spec can be found [here](https://github.com/telkomdev/go-dbcodegen/blob/main/examples/schemas/json-schema-spec.md)
+```
+{
+  "name": "example",
+  "fields": [
+    {
+      "name": "id",
+      "type": "bigserial",
+      "options": [
+        "primary key"
+      ]
+    },
+    {
+      "name": "name",
+      "type": "varchar",
+      "limit": 50,
+      "options": [
+        "not null"
+      ]
+    }
+  ],
+  "indexes": [
+    {
+      "name": "index_example_on_name",
+      "fields": [
+        {
+          "column": "name"
+        }
+      ],
+      "unique": true
+    }
+  ]
+}
+```
+Other example can be found [here](https://github.com/telkomdev/go-dbcodegen/tree/main/examples/schemas)
+
