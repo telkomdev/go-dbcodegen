@@ -3,9 +3,9 @@ This tool is to help you generate schema migrations and CRUD code in Golang from
 
 ## Why
 This tool is inspired by an amazing video titled [Design Microservice Architectures the Right Way](https://www.youtube.com/watch?v=j6ow-UemzBc).
-Plenty of reasons why this tool is built can be found there. One of the example is, according to that video, when things 
-are slow because some queries don't have index, the hero is not the person who fix it by adding index, but the unsung 
-hero is the one who prevent it from ever happened in the first place. One way to do that is to provide a tool to generate high
+Plenty of reasons why this tool is built can be found there. One of the example, according to that video, is when things 
+are slow because some queries don't have index, the hero is not the person who fix it by adding index. However, the unsung 
+hero is the one who prevents it from ever happened in the first place. One way to do that is to provide a tool to generate high
 quality database access code. This dbcodegen is aimed to be such tool.
 
 ## Supported Command
